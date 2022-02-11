@@ -8,3 +8,9 @@ Repo created by ravi teja (power star of the company)
 2. Take help of ajay, if you got stuck.
 3. Please move that file outside of first_django folder
 # Wishesfeb11
+
+```python
+print("om sri sai ram")
+```
+
+> I am sai krishna
