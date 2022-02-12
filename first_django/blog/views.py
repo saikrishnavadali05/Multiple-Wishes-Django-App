@@ -4,6 +4,7 @@ from django.views.generic import (ListView , DetailView ,CreateView , UpdateView
 from django.contrib.auth.models import User
 from .models import Post
 from django.http import HttpResponseRedirect
+from .forms import customerHBD
 
 
 def home(request):
@@ -68,16 +69,14 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 def about(request):
     return render(request,'blog/about.html',{'title':'ABOUT'})
 
-def Products(request):
-    return render(request, 'blog/products.html',{'title':'Ebook'})
+def wishes(request):
+    form = customerHBD()
+    if request.method == 'POST':
+        form = customerHBD(request.POST)
+        if form.is_valid():
+            form.save()
+    context = {'form':form}
+    return render(request, 'blog/wishes.html',{'title':'wishes'})
 
 def Ebook(request):
     return render(request, 'blog/Ebook.html',{'title':'Ebook'})
-
-
-from django import forms
-class Details(forms.Form):
-    model = Post
-    fields = ['title' , 'content']
-
-
