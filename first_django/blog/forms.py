@@ -1,7 +1,7 @@
-from django import forms
+from django.forms import ModelForm
 from .models import customerHBD
 
-class customerHBD(forms.ModelForm):
+class customerHBD(ModelForm):
     class Meta:
         model = customerHBD
-        fields = '__all__'
+        fields = ['name', 'message', 'email', 'date']

@@ -30,7 +30,6 @@ class UserPostListView(ListView):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
 
-
 class PostDetailView(DetailView):
     model = Post
 
@@ -67,7 +66,7 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 
 def about(request):
-    return render(request,'blog/about.html',{'title':'ABOUT'})
+    return render(request, 'blog/about.html', {'title':'ABOUT'})
 
 def wishes(request):
     form = customerHBD()
@@ -76,7 +75,7 @@ def wishes(request):
         if form.is_valid():
             form.save()
     context = {'form':form}
-    return render(request, 'blog/wishes.html',{'title':'wishes'})
+    return render(request=request, template_name='blog/wishes.html', context=context)
 
 def Ebook(request):
     return render(request, 'blog/Ebook.html',{'title':'Ebook'})
