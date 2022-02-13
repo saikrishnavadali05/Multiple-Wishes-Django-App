@@ -74,6 +74,7 @@ def about(request):
 def wishes(request):
     form = customerHBD()
     print("ICANTPLAY")
+    print(request.method)
     if request.method == 'POST':
         print("PLAYING")
         form = customerHBD(request.POST)
