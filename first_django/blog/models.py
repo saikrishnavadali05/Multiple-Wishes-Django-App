@@ -17,9 +17,10 @@ class Post(models.Model):
 
 class customerHBD(models.Model):
     name= models.CharField(max_length=200)
-    message = models.CharField(max_length=500)
+    message = models.TextField()
     email = models.EmailField(max_length=50)
-    date = models.DateTimeField(max_length=50)
+    date = models.DateField(max_length=50)
+    time = models.TimeField()
 
     def __str__(self):
         return self.name

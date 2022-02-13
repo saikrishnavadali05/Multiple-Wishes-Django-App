@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %} 
         <h3> BirthdayWishes </h3>
-        <form action = "wishes.html" d = "post">
+        <form action = "wishes.html" method = "post">
             {% csrf_token %}
             {{ form|crispy }}
             <input type="submit" value="submit">

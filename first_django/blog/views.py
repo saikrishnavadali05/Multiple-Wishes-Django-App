@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from .models import Post
 from django.http import HttpResponseRedirect
 from .forms import customerHBD
+from django.shortcuts import redirect, render
+
 
 
 def home(request):
@@ -70,10 +72,15 @@ def about(request):
 
 def wishes(request):
     form = customerHBD()
+    print("ICANTPLAY")
     if request.method == 'POST':
+        print("PLAYING")
         form = customerHBD(request.POST)
         if form.is_valid():
             form.save()
+            print("WONTHEGAME")
+    else:
+        print("GAMEOVER")
     context = {'form':form}
     return render(request=request, template_name='blog/wishes.html', context=context)
 

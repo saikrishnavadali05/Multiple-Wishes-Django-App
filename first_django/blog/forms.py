@@ -4,4 +4,4 @@ from .models import customerHBD
 class customerHBD(ModelForm):
     class Meta:
         model = customerHBD
-        fields = ['name', 'message', 'email', 'date']
+        fields = ['name', 'message', 'email', 'date' , 'time']
