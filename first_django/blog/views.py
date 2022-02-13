@@ -68,7 +68,8 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 
 def about(request):
-    return render(request, 'blog/about.html', {'title':'ABOUT'})
+    context = {'title':'ABOUT'}
+    return render(request=request, template_name='blog/about.html', context=context)
 
 def wishes(request):
     form = customerHBD()
@@ -78,11 +79,9 @@ def wishes(request):
         form = customerHBD(request.POST)
         if form.is_valid():
             form.save()
-            print("WONTHEGAME")
-    else:
-        print("GAMEOVER")
-    context = {'form':form}
+    context = {'form':form, 'title':'Multiple-Wishes'}
     return render(request=request, template_name='blog/wishes.html', context=context)
 
 def Ebook(request):
-    return render(request, 'blog/Ebook.html',{'title':'Ebook'})
+    context = {'title':'Ebook'}
+    return render(request=request, template_name='blog/Ebook.html', context=context)
