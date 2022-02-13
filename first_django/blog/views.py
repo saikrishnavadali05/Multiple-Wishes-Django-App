@@ -6,6 +6,7 @@ from .models import Post
 from django.http import HttpResponseRedirect
 from .forms import customerHBD
 from django.shortcuts import redirect, render
+from django.contrib import messages
 
 
 
@@ -72,14 +73,14 @@ def about(request):
     return render(request=request, template_name='blog/about.html', context=context)
 
 def wishes(request):
-    form = customerHBD()
-    print("ICANTPLAY")
-    print(request.method)
     if request.method == 'POST':
-        print("PLAYING")
         form = customerHBD(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, f'Your Details has been Saved')
+            return redirect('home')
+    else:
+        form = customerHBD()
     context = {'form':form, 'title':'Multiple-Wishes'}
     return render(request=request, template_name='blog/wishes.html', context=context)
 
