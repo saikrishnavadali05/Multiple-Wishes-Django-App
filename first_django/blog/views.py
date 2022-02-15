@@ -74,6 +74,7 @@ def about(request):
 
 def wishes(request):
     if request.method == 'POST':
+        print("Am in if conditon")
         form = customerHBD(request.POST)
         if form.is_valid():
             form.save()
