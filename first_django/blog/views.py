@@ -4,6 +4,10 @@ from django.views.generic import (ListView , DetailView ,CreateView , UpdateView
 from django.contrib.auth.models import User
 from .models import Post
 from django.http import HttpResponseRedirect
+from .forms import customerHBD
+from django.shortcuts import redirect, render
+from django.contrib import messages
+
 
 
 def home(request):
@@ -28,7 +32,6 @@ class UserPostListView(ListView):
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
-
 
 class PostDetailView(DetailView):
     model = Post
@@ -66,18 +69,25 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 
 def about(request):
-    return render(request,'blog/about.html',{'title':'ABOUT'})
+    context = {'title':'ABOUT'}
+    return render(request=request, template_name='blog/about.html', context=context)
 
-def Products(request):
-    return render(request, 'blog/products.html',{'title':'Ebook'})
+def wishes(request):
+    if request.method == 'POST':
+        print("Am in if conditon")
+        form = customerHBD(request.POST)
+        if form.is_valid():
+            form.save()
+            name = form.cleaned_data.get("name")
+            date = form.cleaned_data.get("date")
+            time = form.cleaned_data.get("time")
+            messages.success(request, f'Sending mail to {name} on {date} at {time}')
+            return redirect('/')
+    else:
+        form = customerHBD()
+    context = {'form':form, 'title':'Multiple-Wishes'}
+    return render(request=request, template_name='blog/wishes.html', context=context)
 
 def Ebook(request):
-    return render(request, 'blog/Ebook.html',{'title':'Ebook'})
-
-
-from django import forms
-class Details(forms.Form):
-    model = Post
-    fields = ['title' , 'content']
-
-
+    context = {'title':'Ebook'}
+    return render(request=request, template_name='blog/Ebook.html', context=context)
