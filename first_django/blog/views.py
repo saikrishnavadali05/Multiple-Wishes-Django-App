@@ -79,7 +79,7 @@ def wishes(request):
         if form.is_valid():
             form.save()
             messages.success(request, f'Your Details has been Saved')
-            return redirect('home')
+            return redirect('/')
     else:
         form = customerHBD()
     context = {'form':form, 'title':'Multiple-Wishes'}
