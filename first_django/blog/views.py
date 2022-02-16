@@ -1,16 +1,19 @@
-from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import (ListView , DetailView ,CreateView , UpdateView , DeleteView)
 from django.contrib.auth.models import User
-from .models import Post
-from django.http import HttpResponseRedirect
-from .forms import customerHBD
-from django.shortcuts import redirect, render
 from django.contrib import messages
 
+from django.shortcuts import redirect, render, get_object_or_404 
 
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView, UpdateView)
 
+from .forms import CustomerHBDForm
+from .models import CustomerHBD, Post
+
+customerdata=CustomerHBD.objects.all()
+CustomerHBD.objects.get(name="")
+print(customerdata)
 def home(request):
+    print("helloworld")
     context = {
         'posts':Post.objects.all()
     }
@@ -75,7 +78,7 @@ def about(request):
 def wishes(request):
     if request.method == 'POST':
         print("Am in if conditon")
-        form = customerHBD(request.POST)
+        form = CustomerHBDForm(request.POST)
         if form.is_valid():
             form.save()
             name = form.cleaned_data.get("name")
@@ -84,7 +87,7 @@ def wishes(request):
             messages.success(request, f'Sending mail to {name} on {date} at {time}')
             return redirect('/')
     else:
-        form = customerHBD()
+        form = CustomerHBDForm()
     context = {'form':form, 'title':'Multiple-Wishes'}
     return render(request=request, template_name='blog/wishes.html', context=context)
 

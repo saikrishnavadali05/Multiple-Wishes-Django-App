@@ -15,8 +15,8 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post-detail',kwargs={'pk':self.pk})
 
-class customerHBD(models.Model):
-    name= models.CharField(max_length=200)
+class CustomerHBD(models.Model):
+    name = models.CharField(max_length=200)
     message = models.TextField()
     email = models.EmailField(max_length=50)
     date = models.DateField(max_length=50)
