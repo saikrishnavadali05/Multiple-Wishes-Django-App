@@ -4,16 +4,19 @@ from django.contrib import messages
 
 from django.shortcuts import redirect, render, get_object_or_404 
 
+from django.http import HttpResponse
+
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView, UpdateView)
 
 from .forms import CustomerHBDForm
 from .models import CustomerHBD, Post
 
-customerdata=CustomerHBD.objects.all()
-CustomerHBD.objects.get(name="")
-print(customerdata)
+from .tasks import sleepy, send_email_task
+
+
+xname=CustomerHBD.objects.filter(email="hhh@hai.com")
+print(xname)
 def home(request):
-    print("helloworld")
     context = {
         'posts':Post.objects.all()
     }
@@ -76,6 +79,7 @@ def about(request):
     return render(request=request, template_name='blog/about.html', context=context)
 
 def wishes(request):
+    sleepy(2)
     if request.method == 'POST':
         print("Am in if conditon")
         form = CustomerHBDForm(request.POST)
@@ -90,6 +94,12 @@ def wishes(request):
         form = CustomerHBDForm()
     context = {'form':form, 'title':'Multiple-Wishes'}
     return render(request=request, template_name='blog/wishes.html', context=context)
+
+
+def index(request):
+    send_email_task.delay()
+    return HttpResponse('<h1>EMAIL HAS BEEN SENT WITH CELERY!</h1>')
+
 
 def Ebook(request):
     context = {'title':'Ebook'}

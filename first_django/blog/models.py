@@ -23,4 +23,4 @@ class CustomerHBD(models.Model):
     time = models.TimeField()
 
     def __str__(self):
-        return self.name
+        return (f"{self.name, self.message, self.email}")
