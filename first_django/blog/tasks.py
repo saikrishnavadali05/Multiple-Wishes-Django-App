@@ -17,6 +17,6 @@ def send_email_task():
     send_mail('Celery Task Worked!',
     'This is proof the task worked!',
     'pseudotesting05@gmail.com.com',
-    ['saikrishnavadali@gmail.com'])
+    ['saikrishnavadali05@gmail.com'])
 
     return None
