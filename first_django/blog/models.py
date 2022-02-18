@@ -23,7 +23,8 @@ class CustomerHBD(models.Model):
     time = models.TimeField()
 
     def __str__(self):
-        return f"{self.name, self.message, self.email}"
+        return f"{self.date}"
+#f"{self.name, self.message, self.email, self.date, self.time}"
 
 class dummy(models.Model):
     name = models.CharField(max_length = 4)

@@ -14,7 +14,6 @@ from .models import CustomerHBD, Post
 from .tasks import sleepy, send_email_task
 
 
-
 def home(request):
     context = {
         'posts':Post.objects.all()
