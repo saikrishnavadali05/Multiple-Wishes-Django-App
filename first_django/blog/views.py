@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-from django.shortcuts import redirect, render, get_object_or_404 
+from django.shortcuts import redirect, render, get_object_or_404
 
 from django.http import HttpResponse
 
@@ -14,8 +14,6 @@ from .models import CustomerHBD, Post
 from .tasks import sleepy, send_email_task
 
 
-xname=CustomerHBD.objects.filter(email="hhh@hai.com")
-print(xname)
 def home(request):
     context = {
         'posts':Post.objects.all()
@@ -81,7 +79,6 @@ def about(request):
 def wishes(request):
     sleepy(2)
     if request.method == 'POST':
-        print("Am in if conditon")
         form = CustomerHBDForm(request.POST)
         if form.is_valid():
             form.save()
@@ -96,7 +93,7 @@ def wishes(request):
     return render(request=request, template_name='blog/wishes.html', context=context)
 
 
-def index(request):
+def index():
     send_email_task.delay()
     return HttpResponse('<h1>EMAIL HAS BEEN SENT WITH CELERY!</h1>')
 
