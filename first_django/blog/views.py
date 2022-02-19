@@ -14,6 +14,12 @@ from .models import CustomerHBD, Post
 from .tasks import sleepy, send_email_task
 
 
+##
+userdata = CustomerHBD.objects.all()
+for i in userdata:
+    print(i.message)
+##
+
 def home(request):
     context = {
         'posts':Post.objects.all()
