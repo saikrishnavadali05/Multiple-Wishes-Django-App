@@ -9,8 +9,6 @@ Repo created by ravi teja (power star of the company)
 3. Please move that file outside of first_django folder
 # Wishesfeb11
 
-```python
-print("om sri sai ram")
-```
+### Useful Applications :
 
-> I am sai krishna
+1. Postman (use postman application whenever possible).
