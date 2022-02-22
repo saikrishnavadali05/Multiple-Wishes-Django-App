@@ -18,6 +18,11 @@ from .tasks import sleepy, send_email_task
 userdata = CustomerHBD.objects.all()
 for i in userdata:
     print(i.message)
+
+import datetime
+now = datetime.datetime.now()
+today=now.strftime("%Y-%m-%d")
+print("today",today)
 ##
 
 def home(request):
