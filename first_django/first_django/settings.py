@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRONJOBS = [
+    ('*/1 * * * *', 'blog.cron.sending_mail_job')
+]

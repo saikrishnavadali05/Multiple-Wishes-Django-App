@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import customerHBD
+from .models import CustomerHBD
 
-class customerHBD(ModelForm):
+class CustomerHBDForm(ModelForm):
     class Meta:
-        model = customerHBD
+        model = CustomerHBD
         fields = ['name', 'message', 'email', 'date' , 'time']

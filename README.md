@@ -11,4 +11,10 @@ Repo created by ravi teja (power star of the company)
 
 ### Useful Applications :
 
+
 1. Postman (use postman application whenever possible).
+
+### Useful links : 
+https://www.youtube.com/watch?v=6DI_7Zja8Zc
+https://www.youtube.com/watch?v=b-6mEAr1m-A
+
