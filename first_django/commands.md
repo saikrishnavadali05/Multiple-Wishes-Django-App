@@ -11,12 +11,11 @@
 
 ### git commands
 
-<br>
+<br></br>
 > delete a local branch
 ```git branch -d <local-branch>```
-</br>
-  
-<br>
+
+<br></br>
 > delete a remote branch
 ```git push origin --delete <remote-branch-name>```
-</br>
+
