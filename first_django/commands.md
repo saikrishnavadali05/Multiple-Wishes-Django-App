@@ -16,4 +16,9 @@
 <br></br>
 > delete a remote branch
 ```git push origin --delete <remote-branch-name>```
+<br></br>
+> Command to force delete a local branch (irrespective of whether the branch is merged into another branch or not)
+```git branch -D <local-branch>```
+
+
 
