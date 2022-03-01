@@ -1,6 +1,6 @@
-# Django_learn
+# Wishesfeb11
 
-Repo created by ravi teja (power star of the company)
+Repo created by Ravi Teja Josyula
 
 # Commands.md formatting has to be changed
 
