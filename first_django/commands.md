@@ -8,3 +8,15 @@
 > Migrations are Django’s way of propagating changes you make to your models into your database schema. 
 
 ### Steps to create virtual environment
+
+### git commands
+
+<br>
+> delete a local branch
+```git branch -d <local-branch>```
+</br>
+  
+<br>
+> delete a remote branch
+```git push origin --delete <remote-branch-name>```
+</br>
