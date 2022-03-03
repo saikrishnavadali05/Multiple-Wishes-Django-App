@@ -19,6 +19,12 @@
 <br></br>
 > Command to force delete a local branch (irrespective of whether the branch is merged into another branch or not)
 ```git branch -D <local-branch>```
+  <br></br>
+> Create a new branch from an older commit
+```git branch <new-branch-name> <older-commit-hash>```
+  <br></br>
+> Create and checkout to a new branch from an older commit
+```git checkout -b <new-branch-name> <older-commit-hash>```
 
 
 
