@@ -1,14 +1,29 @@
-from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import (ListView , DetailView ,CreateView , UpdateView , DeleteView)
 from django.contrib.auth.models import User
-from .models import Post
-from django.http import HttpResponseRedirect
-from .forms import customerHBD
-from django.shortcuts import redirect, render
 from django.contrib import messages
 
+from django.shortcuts import redirect, render, get_object_or_404
 
+from django.http import HttpResponse
+
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView, UpdateView)
+
+from .forms import CustomerHBDForm
+from .models import CustomerHBD, Post
+
+from .tasks import sleepy, send_email_task
+
+
+##
+userdata = CustomerHBD.objects.all()
+for i in userdata:
+    print(i.message)
+
+import datetime
+now = datetime.datetime.now()
+today=now.strftime("%Y-%m-%d")
+print("today",today)
+##
 
 def home(request):
     context = {
@@ -73,9 +88,9 @@ def about(request):
     return render(request=request, template_name='blog/about.html', context=context)
 
 def wishes(request):
+    sleepy(2)
     if request.method == 'POST':
-        print("Am in if conditon")
-        form = customerHBD(request.POST)
+        form = CustomerHBDForm(request.POST)
         if form.is_valid():
             form.save()
             name = form.cleaned_data.get("name")
@@ -84,9 +99,15 @@ def wishes(request):
             messages.success(request, f'Sending mail to {name} on {date} at {time}')
             return redirect('/')
     else:
-        form = customerHBD()
+        form = CustomerHBDForm()
     context = {'form':form, 'title':'Multiple-Wishes'}
     return render(request=request, template_name='blog/wishes.html', context=context)
+
+
+def index():
+    send_email_task.delay()
+    return HttpResponse('<h1>EMAIL HAS BEEN SENT WITH CELERY!</h1>')
+
 
 def Ebook(request):
     context = {'title':'Ebook'}

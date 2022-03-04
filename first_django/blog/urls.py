@@ -16,7 +16,9 @@ urlpatterns = [
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name = 'post-delete'),
     path('about/', views.about, name = 'blog-ABOUT'),
     path('wishes/', views.wishes,name='blog-wishes'),
-    path('Ebook/',views.Ebook,name='blog-Ebook')
+    path('Ebook/',views.Ebook,name='blog-Ebook'),
+    path('index/', views.index, name='index')
+
 ]
 
 

@@ -10,17 +10,20 @@ class Post(models.Model):
     author = models.ForeignKey(User , on_delete = models.CASCADE)
 
     def __str__(self):
-        return self.title 
+        return str(self.title)
 
     def get_absolute_url(self):
         return reverse('post-detail',kwargs={'pk':self.pk})
 
-class customerHBD(models.Model):
-    name= models.CharField(max_length=200)
+class CustomerHBD(models.Model):
+    name = models.CharField(max_length=200)
     message = models.TextField()
     email = models.EmailField(max_length=50)
     date = models.DateField(max_length=50)
     time = models.TimeField()
 
     def __str__(self):
-        return self.name
+        return f"{self.name, self.message, self.email, self.date, self.time}"
+
+class dummy(models.Model):
+    name = models.CharField(max_length = 4)

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dks!(9bl91+==7m)a+rommqi9o86_x-hnr+g-5et5ot@hoxj0^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRONJOBS = [
+    ('*/1 * * * *', 'blog.cron.sending_mail_job')
+]

@@ -1,3 +1,6 @@
+celery
 django
 django-crispy-forms
+django-crontab
+django-extensions
 pillow
