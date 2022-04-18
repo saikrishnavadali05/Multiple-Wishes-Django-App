@@ -1,44 +1,92 @@
-# Website for Multiple Wishes
+
+# Multiple Wishes
+
+The company which can makes happy everyone remembering and wishing them their special days.
+
+
+
+
+##  Link of Website
 
 https://www.djangoproject.com/start/
+## Company Logo
 
-## Website Photo
-###Images
+![Logo](https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg)
 
-Image:
+> Dream comes true.
+## Appendix
 
-![](https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg)
+Any additional information goes here
 
-> Follow your heart.
+
+## Authors
+
+- [@Sai Krishna Vadali](https://github.com/saikrishnavadali05)
+- [@Josyula Ravi Teja](https://github.com/ravitejasssihl)
+- [@Vissamsetty-Bharathrath](https://github.com/Vissamsetty-Bharathrath)
+
+
 
 ## Task
-Building a Website for the company Multiple Wishes With the help of Django.
++ To create a website for the company Multiple Wishes. 
+
+## Installation
+
+To deploy this project run
+
+#### *Django* 
+```bash
+  python -m pip install Django
+```
+#### *Django crispy forms* 
+```bash
+  pip install django-crispy-forms
+```
+#### *Pillow* 
+```bash
+  pip install Pillow
+```
 
 
+## Run Locally
+
+#### *Clone the project*
+
+```bash
+  git clone https://github.com/Vissamsetty-Bharathrath/Wishesfeb11.git
+```
+
+#### *Go to the project directory*
+
+```bash
+  cd first_django
+```
+
+#### *Start the server*
+
+```bash
+  npm manage.py runserver
+```
 
 
+## Technologies
+- Python
+- Django
 
 
+## Design
+- BootStrap
+- Django Crispy Forms
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
 
 
+## Support
 
+For support, email saikrishnavadali05@gmail.com or join our Slack channel.
 
-
-
-
-
-
-# Django_learn
-
-Repo created by ravi teja (power star of the company)
-
-# Commands.md formatting has to be changed
-
-1. Please learn on how to format .md files to make them visually appealing
-2. Take help of ajay, if you got stuck.
-3. Please move that file outside of first_django folder
-# Wishesfeb11
-
-### Useful Applications :
-
-1. Postman (use postman application whenever possible).
