@@ -23,6 +23,9 @@ Any additional information goes here
 - [@Josyula Ravi Teja](https://github.com/ravitejasssihl)
 - [@Vissamsetty-Bharathrath](https://github.com/Vissamsetty-Bharathrath)
 
+## Documentation
+
+[Documentation](https://docs.djangoproject.com/en/4.0/)
 
 
 ## Task
@@ -75,6 +78,10 @@ To deploy this project run
 ## Design
 - BootStrap
 - Django Crispy Forms
+
+## Badges
+<a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangomade124x25.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
+
 ## Contributing
 
 Contributions are always welcome!
