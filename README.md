@@ -82,6 +82,7 @@ To deploy this project run
 ## Badges
 <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangomade124x25.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
 
+
 ## Contributing
 
 Contributions are always welcome!
@@ -93,5 +94,5 @@ Please adhere to this project's `code of conduct`.
 
 ## Support
 
-For support, email saikrishnavadali05@gmail.com or join our Slack channel.
+For support, email   saikrishnavadali05@gmail.com or join our Slack channel.
 
