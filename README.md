@@ -7,7 +7,7 @@ https://www.djangoproject.com/start/
 
 Image:
 
-![](Wishesfeb11/multiple_images.jpg)
+![](https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg)
 
 > Follow your heart.
 
