@@ -9,7 +9,7 @@ The company which can makes happy everyone remembering and wishing them their sp
 https://www.djangoproject.com/start/
 ## Company Logo
 
-![Logo](https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg) { width: 200px; }
+<img src="https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg" alt="Logo" width="200"/>
 
 > Dream comes true.
 ## Appendix
