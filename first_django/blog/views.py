@@ -81,7 +81,7 @@ def wishes(request):
             name = form.cleaned_data.get("name")
             date = form.cleaned_data.get("date")
             time = form.cleaned_data.get("time")
-            messages.success(request, f'Sending mail to {name} on {date} at {time}')
+            messages.success(request = request,message= f'Sending mail to {name} on {date} at {time}')
             return redirect('/')
     else:
         form = customerHBD()
