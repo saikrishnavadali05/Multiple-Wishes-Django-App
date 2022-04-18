@@ -11,7 +11,7 @@ https://www.djangoproject.com/start/
 
 <img src="https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg" alt="Logo" width="200"/>
 
-> Dream comes true.
+> Greet Even When You Are Asleep.
 ## Appendix
 
 Any additional information goes here
