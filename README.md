@@ -4,14 +4,12 @@
 The company which can makes happy everyone remembering and wishing them their special days.
 
 
-
-
 ##  Link of Website
 
 https://www.djangoproject.com/start/
 ## Company Logo
 
-![Logo](https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg)
+![Logo](https://github.com/Vissamsetty-Bharathrath/Wishesfeb11/blob/master/multiple_images.jpg) { width: 200px; }
 
 > Dream comes true.
 ## Appendix
