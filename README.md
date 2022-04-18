@@ -1,3 +1,33 @@
+# Website for Multiple Wishes
+
+https://www.djangoproject.com/start/
+
+## Website Photo
+###Images
+
+Image:
+
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+
+> Follow your heart.
+
+## Task
+Building a Website for the company Multiple Wishes With the help of Django.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Django_learn
 
 Repo created by ravi teja (power star of the company)
